@@ -17,19 +17,25 @@ Replace this paragraph with your own summary of what your version does.
 
 ## How The System Works
 
+Real world recommendations work by combining many different types of signals to predict what a user might enjoy next. The two major approaches to this are Content-Based Filtering, which checks how similar a song is to the songs you have enjoyed before, and Collaborative Filtering, which recommends items based on other users that have similar taste profiles to you. In this project I'm going to be using Content-Based Filtering, as I don't have access to a large amount of user data needed which is needed to make Collaborative Filtering work.
+
+My UserProfile will store a user's favorite music genres, favorite song moods, and the average/preferred energy, tempo, and valence of the songs a user listens to. Each song will have these attributes along with the songs id, artist, and title. The Recommender will compute a score by checking if a song's genre or mood matches a user's favorites, and adding points if it does. It will then calculate a songs closeness in its energy, tempo, and valence scores, giving more points if the scores are closer to a users average/preferred scores. The scores for each feature will be weighted like this:
+
+Genre = 40
+Mood = 30
+Energy = 15
+Tempo = 10
+Valence = 5
+
+Adding up to 100.
+
+After all songs have been scored, they are sorted from highest score to lowest score. The recommender then returns the highest-ranked songs as recommendations.
+
+
+
+For biases This recommender weighs genre and mood very heavily, which may lead to them being over-prioritized. This may cause songs with similar energy, tempo, or valence to be ranked lower than they maybe should be. Also, as it is a purely Content-Based Filtering system, it also runs into the downside of CBF which is creating a filter bubble of repeatedly recommending songs that are very similar to a users existing music tastes.
+
 Explain your design in plain language.
-
-Some prompts to answer:
-
-- What features does each `Song` use in your system
-  - For example: genre, mood, energy, tempo
-- What information does your `UserProfile` store
-- How does your `Recommender` compute a score for each song
-- How do you choose which songs to recommend
-
-You can include a simple diagram or bullet list if helpful.
-
----
 
 ## Getting Started
 
