@@ -77,12 +77,51 @@ You can add more tests in `tests/test_recommender.py`.
 Paste a sample of your recommender's output here as a text block so a reader can see what it produces:
 
 ```
-# e.g.:
-# User profile: genre=indie, mood=chill, energy=low
-# Recommendations:
-#   1. ...
-#   2. ...
-#   3. ...
+Loaded 20 songs from data/songs.csv
+
+======================================================================
+                    🎵 TOP 5 MUSIC RECOMMENDATIONS                     
+======================================================================
+
+1. Sunrise City - Neon Echo
+   Score: 99.1/100
+   ──────────────────────────────────────────────────────────────────
+   ✓ Genre match: pop
+   ✓ Mood match: happy
+   Energy: 14.7/15 (target 0.8, song 0.82)
+   Tempo: 9.6/10 (target 120, song 118.0)
+   Valence: 4.8/5 (target 0.8, song 0.84)
+
+2. Gym Hero - Max Pulse
+   Score: 65.5/100
+   ──────────────────────────────────────────────────────────────────
+   ✓ Genre match: pop
+   Energy: 13.1/15 (target 0.8, song 0.93)
+   Tempo: 7.6/10 (target 120, song 132.0)
+   Valence: 4.8/5 (target 0.8, song 0.77)
+
+3. Rooftop Lights - Indigo Parade
+   Score: 58.6/100
+   ──────────────────────────────────────────────────────────────────
+   ✓ Mood match: happy
+   Energy: 14.4/15 (target 0.8, song 0.76)
+   Tempo: 9.2/10 (target 120, song 124.0)
+   Valence: 5.0/5 (target 0.8, song 0.81)
+
+4. Pulsing Lights - ElectroWave
+   Score: 26.6/100
+   ──────────────────────────────────────────────────────────────────
+   Energy: 14.7/15 (target 0.8, song 0.82)
+   Tempo: 7.0/10 (target 120, song 135.0)
+   Valence: 4.9/5 (target 0.8, song 0.78)
+
+5. Neon Dreams - SynthMaster
+   Score: 26.5/100
+   ──────────────────────────────────────────────────────────────────
+   Energy: 13.8/15 (target 0.8, song 0.88)
+   Tempo: 8.4/10 (target 120, song 128.0)
+   Valence: 4.2/5 (target 0.8, song 0.65)
+
 ```
 
 **Screenshot or video** *(optional)*: <!-- Insert a screenshot or demo video link here -->
