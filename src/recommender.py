@@ -83,7 +83,7 @@ def score_song(user_prefs: Dict, song: Dict) -> Tuple[float, List[str]]:
     target_energy = user_prefs.get('target_energy', 0.5)
     song_energy = song.get('energy', 0.5)
     energy_distance = abs(song_energy - target_energy)
-    energy_points = 15 * (1 - energy_distance)
+    energy_points = 15 * max(0, 1 - energy_distance)
     score += energy_points
     reasons.append(f"Energy: {energy_points:.1f}/15 (target {target_energy}, song {song_energy})")
 
@@ -100,7 +100,7 @@ def score_song(user_prefs: Dict, song: Dict) -> Tuple[float, List[str]]:
     target_valence = user_prefs.get('target_valence', 0.5)
     song_valence = song.get('valence', 0.5)
     valence_distance = abs(song_valence - target_valence)
-    valence_points = 5 * (1 - valence_distance)
+    valence_points = 5 * max(0, 1 - valence_distance)
     score += valence_points
     reasons.append(f"Valence: {valence_points:.1f}/5 (target {target_valence}, song {song_valence})")
 
