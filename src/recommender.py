@@ -30,7 +30,6 @@ class UserProfile:
     target_energy: float
     target_tempo: float
     target_valence: float
-    likes_acoustic: bool #Probably will delete.
 
 class Recommender:
     """
